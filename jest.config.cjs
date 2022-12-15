@@ -1,5 +1,5 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/client/src'],
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.d.ts',
@@ -7,7 +7,7 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [],
   testEnvironment: 'jsdom',
-  modulePaths: ['<rootDir>/src'],
+  modulePaths: ['<rootDir>/client/src'],
   transform: {
     '^.+\\.(ts|js|tsx|jsx)$': '@swc/jest',
   },
