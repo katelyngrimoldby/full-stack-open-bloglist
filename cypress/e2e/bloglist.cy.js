@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 describe('Bloglist', () => {
   beforeEach(() => {
     cy.request('POST', 'http://localhost:8080/api/testing/reset');
