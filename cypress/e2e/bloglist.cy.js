@@ -114,7 +114,7 @@ describe('Bloglist', () => {
         cy.get('#add').click();
 
         // eslint-disable-next-line cypress/no-unnecessary-waiting
-        cy.wait(200);
+        cy.wait(500);
 
         cy.get('.blog:last .toggleButton').click();
         cy.get('.blog:last .likeButton').click();
