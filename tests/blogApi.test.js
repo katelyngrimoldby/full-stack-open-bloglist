@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 /* eslint-disable jest/expect-expect */
 const mongoose = require('mongoose');
 const supertest = require('supertest');
