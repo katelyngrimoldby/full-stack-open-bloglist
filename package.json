@@ -1,4 +1,7 @@
 {
+  "engines" : { 
+    "node" : "16.18.0" 
+  },
   "name": "part4",
   "version": "1.0.0",
   "description": "",
@@ -8,7 +11,7 @@
     "dev": "NODE_ENV=development nodemon index.js",
     "test": "NODE_ENV=test jest tests --verbose --runInBand --forceExit",
     "start:test": "NODE_ENV=test node index.js",
-    "build:ui": "rm -rf dist && cd client && npm ci && npm run build && cp -r dist ../",
+    "build:ui": "rm -rf dist && cd client && npm install && npm run build && cp -r dist ../",
     "test:e2e": "cypress run",
     "test:ui": "jest client --config=jest.config.cjs",
     "lint": "eslint './**/*.js'"
