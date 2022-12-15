@@ -27,7 +27,7 @@ jobs:
       - name: Test
         run: npm run test
       - name: Test UI
-        run: cd client && npm run test:ui
+        run: cd client && npm ci && npm run test:ui
       - name: Build UI
         run: cd ../ && npm run build:ui
       - name: e2e tests
