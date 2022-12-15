@@ -26,8 +26,6 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run test
-      - name: Test UI
-        run: cd client && npm ci && npm run test:ui
       - name: Build UI
         run: cd ../ && npm run build:ui
       - name: e2e tests
@@ -36,3 +34,15 @@ jobs:
           command: npm run test:e2e
           start: npm run start:test
           wait-on: http://localhost:8080
+
+  frontend_tests: 
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install deps
+        run: cd client && npm ci
+      - name: Test UI
+        run: npm run test:ui
