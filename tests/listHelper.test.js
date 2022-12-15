@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 const listHelper = require('../utils/listHelper');
 
 const blogs = [
@@ -52,9 +56,7 @@ const blogs = [
 ];
 
 test('dummy returns one', () => {
-  const blogs = [];
-
-  const result = listHelper.dummy(blogs);
+  const result = listHelper.dummy();
   expect(result).toBe(1);
 });
 

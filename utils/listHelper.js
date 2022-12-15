@@ -1,7 +1,6 @@
 const _ = require('lodash');
 
-const dummy = (blogs) => {
-  console.log(blogs);
+const dummy = () => {
   return 1;
 };
 
@@ -75,7 +74,6 @@ const mostLikes = (blogs) => {
     });
 
     const likesPerAuthor = _.map(blogsPerAuthor, function (blogs) {
-      console.log(blogs);
       return {
         author: blogs[0].author,
         likes: blogs.reduce((sum, blog) => sum + blog.likes, 0)
