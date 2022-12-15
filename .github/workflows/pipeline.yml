@@ -36,3 +36,19 @@ jobs:
           command: npm run test:e2e
           start: npm run start:test
           wait-on: http://localhost:8080
+
+  deploy:
+    needs: [predeploy]
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'push'
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+            node-version: '16'
+      - name: Install deps
+        run: npm ci
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: npm run build:ui && flyctl deploy --remote-only
